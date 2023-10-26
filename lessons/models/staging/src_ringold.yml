@@ -1,0 +1,10 @@
+version: 2
+sources:
+  - name: data_acquisition_ringgold
+    database: ocean-tech-admau-asgard-e-ci
+    tables:
+      - name: ontology
+
+      - name: organizations
+
+
