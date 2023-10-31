@@ -1,0 +1,13 @@
+lessons:
+  outputs:
+    dev:
+      dataset: data_acquisition_test2
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      location: EU
+      method: oauth
+      priority: interactive
+      project: ocean-tech-admau-asgard-e-ci
+      threads: 60
+      type: bigquery
+  target: dev
