@@ -1,13 +1,14 @@
-lessons:
+lessons: # this needs to match the profile: in your dbt_project.yml file
+  target: dev # The default for any dbt commands
   outputs:
     dev:
-      dataset: data_acquisition_test2
-      job_execution_timeout_seconds: 300
-      job_retries: 1
-      location: EU
-      method: oauth
-      priority: interactive
-      project: ocean-tech-admau-asgard-e-ci
-      threads: 60
       type: bigquery
-  target: dev
+      method: oauth
+      # To use this, first run (in your terminal): export BIGQUERY_PROJECT="your_project_name"
+      # Then dbt will recognise the variable
+      database: "ocean-tech-admau-asgard-e-ci"
+      schema: "data_acquisition_test" # Replace this with dbt_your_name, e.g. dbt_bob
+      threads: 64 # Max number of concurrent things running at once
+      timeout_seconds: 300
+      location: EU
+      priority: interactive
